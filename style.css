@@ -1,0 +1,87 @@
+/* style.css */
+:root {
+    --primary-color: #357;
+    --secondary-color: #CBA;
+    --text-color: #333;
+    --text-color-light: #CCC;
+}
+
+html, body {
+    font-family: system-ui, sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    
+    padding: 0rem 2rem;
+    border: 10px solid;
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.0em;
+    margin-bottom: 1.0em;
+    border: 0;
+    padding: 0;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+h1 { 
+    font-size: 2.0em;
+    border: 0;
+    border-bottom: 0.1em solid;
+    border-color: var(--primary-color);
+    padding-bottom: 0.05em;
+}
+
+hr {
+    border: 0;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+select, input, textarea, button {
+    font-size: 1em;
+    margin: 0;
+    padding: 0.25em 0.5em;
+    border-color: var(--primary-color);
+    border-width: 0.05em;
+    border-radius: 0.25em;
+}
+
+
+h1 input[type=checkbox] {
+    vertical-align: middle;
+    transform: scale(2.5);
+    margin: 0;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    margin-bottom: 0.15em;
+    accent-color: var(--primary-color);
+}
+
+button {
+    color: white;
+    background-color: var(--primary-color);
+    transition: 0.5s;
+}
+
+button:hover {
+    opacity: 80%;
+}
+todo-item {
+    margin: 0.25em 0.0em;
+    padding: 0.25em 0.5em;
+    border: 0.05em solid var(--primary-color);   
+    border-radius: 0.25em;
+}

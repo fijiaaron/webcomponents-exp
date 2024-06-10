@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Todos </title>
+        <link href="style.css" rel="stylesheet"/>
+        <script src="TodoItem.js" defer></script>
+        <script src="ExpandableList.js" defer></script>
+    </head>
+    <body>
+        <h1>
+            <input type="checkbox" checked/>
+            Todos
+        </h1>
+
+        <todo-item id="todo-1" checked>
+            Feed the animals 
+            <span slot="description">morning</span>
+        </todo-item>
+
+        <todo-item id="todo-2">
+            Water the plants
+            <span slot="description">morning</span>
+        </todo-item> 
+           
+        <todo-item id="todo-3">
+            Go for a walk
+            <span slot="description">afternoon</span>
+        </todo-item>
+        
+        <todo-item id="todo-4">
+            Take a nap
+            <span slot="description">afternoon</span>
+        </todo-item>
+
+        <todo-item id="todo-3">
+            Clean the house
+            <span slot="description">evening</span>
+        </todo-item>
+        
+        <button onclick="doTodos()">Do Todos</button>
+        <hr>
+
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+
+        <ul is="expandable-list">
+            <li>Foo</li>
+            <li>Bar</li>
+        </ul>
+    </body>
+    <script>
+
+        var status = false;
+
+        function doTodos() {
+            var todos = document.querySelectorAll("todo-item");
+            var n = 0;    
+            setInterval(()=> {
+                console.log("interval: ", n);
+                var todo = todos[n];
+                console.log(todo.childNodes[0]);
+                var checked = todo.getAttribute("checked");
+                console.log("checked: ", checked, typeof(checked));
+
+                if (checked === false || checked === "false") {
+                    todo.setAttribute("checked", "true");
+                }
+                else {
+                    todo.setAttribute("checked", "false");
+                }
+                
+                if (++n >= todos.length) { n = 0; }
+
+            }, 1000);
+        }
+
+    </script>
+</html>
